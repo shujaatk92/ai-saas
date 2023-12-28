@@ -1,6 +1,6 @@
 "use client"
 
-import { Menu } from "lucide-react";
+import { Divide, Menu } from "lucide-react";
 import { Button } from "./ui/button";
 
 import {
@@ -23,9 +23,9 @@ const MobileMenu = () => {
     return ( 
         <Sheet>
             <SheetTrigger>
-            <Button variant="ghost" size="icon" className="md:hidden">
+            <div className="md:hidden hover:bg-accent hover:text-accent-foreground h-10 w-10 transition inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
                 <Menu />
-            </Button>
+            </div>
             </SheetTrigger>
             <SheetContent side="left" className="p-0">
                 <Sidebar />
