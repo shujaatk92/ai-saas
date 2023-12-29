@@ -14,6 +14,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { Empty } from "@/components/empty";
 
 const ConversationPage = () => {
     const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
@@ -34,7 +35,6 @@ const ConversationPage = () => {
             
             const response = await axios.post('/api/conversation', { messages: newMessages });
             setMessages((current) => [...current, userMessage, response.data]);
-            
             form.reset();
           }  catch (error: any) {
             //TODO open pro modal
@@ -42,7 +42,6 @@ const ConversationPage = () => {
         } 
         finally{
             router.refresh();
-            form.reset();
         }
     }
     return(
@@ -82,6 +81,9 @@ const ConversationPage = () => {
                     </Form>
                 </div>
                 <div className="space-y-4 mt-4">
+                {messages.length === 0 && !isLoading && (
+                    <Empty />
+                )}
                     <div className="flex flex-col-reverse gap-y-4">
                         {messages.map((message) => (
                             <div key={message.content}>
