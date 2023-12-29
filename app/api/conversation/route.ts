@@ -2,7 +2,6 @@ import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 import { Configuration, OpenAIApi } from "openai";
 
-
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
@@ -36,6 +35,7 @@ export async function POST(
       messages
     });
 
+    
 
     return NextResponse.json(response.data.choices[0].message);
   } catch (error) {

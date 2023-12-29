@@ -21,13 +21,14 @@ import { UserAvatar } from "@/components/user-avatar";
 import { BotAvatar } from "@/components/bot-avatar";
 
 const ConversationPage = () => {
+    const router = useRouter();
     const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
-    const router = useRouter()
+  
     const form = useForm<z.infer<typeof formSchema>>({
-        resolver: zodResolver(formSchema),
-        defaultValues: {
-            prompt: ""
-        }
+      resolver: zodResolver(formSchema),
+      defaultValues: {
+        prompt: ""
+      }
     });
 
     const isLoading = form.formState.isSubmitting;
@@ -36,11 +37,12 @@ const ConversationPage = () => {
         try {
 
             const userMessage: ChatCompletionRequestMessage = { role: "user", content: values.prompt };
-            const newMessages = [...messages, userMessage];
-            
-            const response = await axios.post('/api/conversation', { messages: newMessages });
-            setMessages((current) => [...current, userMessage, response.data]);
-            form.reset();
+      const newMessages = [...messages, userMessage];
+      
+      const response = await axios.post('/api/conversation', { messages: newMessages });
+      setMessages((current) => [...current, userMessage, response.data]);
+      
+      form.reset();
 
           }  catch (error: any) {
 
