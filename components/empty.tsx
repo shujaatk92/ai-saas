@@ -1,18 +1,24 @@
 "use client"
 
 import Image from "next/image"
-
-export const Empty = () =>{
+import { EmptyObject } from "react-hook-form";
+interface EmptyProps {
+    label: string;
+}
+export const Empty = ({label} : EmptyProps) =>{
     return(
-        <div className="h-full p-20 flex felx-col items-center justify-center">
-            <div className="relative h-72 w-72">
+        <div className="h-full p-10 flex flex-col items-center justify-center">
+            <div className="relative h-64 w-64">
                 <Image 
-                src=""
+                src="/empty.png"
                 alt="empty"
-                width={100}
-                height={100}
+                width={256}
+                height={256}
                 />
             </div>
+            <p className="text-muted-foreground text-sm text-center">
+                {label}
+            </p>
         </div>
     )
 }
