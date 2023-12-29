@@ -9,7 +9,8 @@ export const Loader = () => {
                 <Image
                 src="/logo.png"
                 alt="logo"
-                fill
+                width={100} 
+                height={100} 
                 />
             </div>
             <p className="text-sm text-muted-foreground">

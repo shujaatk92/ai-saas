@@ -8,13 +8,10 @@ export const UserAvatar = () => {
     return(
         <Avatar className="h-8 w-8">
             <AvatarImage src={user?.imageUrl} />
-            console.log(user);
-            {/* <AvatarFallback 
-            {user.firstName}
-            {user.lastName}
-            /> */}
-            
-            
+                <AvatarFallback>   
+                    {user?.firstName?.charAt(0)}
+                    {user?.lastName?.charAt(0)}
+                </AvatarFallback>
         </Avatar>
     )
 }

@@ -18,6 +18,7 @@ import { Empty } from "@/components/empty";
 import { Loader } from "@/components/loader";
 import { cn } from "@/lib/utils";
 import { UserAvatar } from "@/components/user-avatar";
+import { BotAvatar } from "@/components/bot-avatar";
 
 const ConversationPage = () => {
     const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
@@ -33,15 +34,19 @@ const ConversationPage = () => {
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
 
         try {
+
             const userMessage: ChatCompletionRequestMessage = { role: "user", content: values.prompt };
             const newMessages = [...messages, userMessage];
             
             const response = await axios.post('/api/conversation', { messages: newMessages });
             setMessages((current) => [...current, userMessage, response.data]);
             form.reset();
+
           }  catch (error: any) {
+
             //TODO open pro modal
             console.log(error); 
+            
         } 
         finally{
             router.refresh();
@@ -90,8 +95,8 @@ const ConversationPage = () => {
                         </div>
                     )}
                 {messages.length === 0 && !isLoading && (
-                    // <Empty label="No conversation started!" />
-                    <UserAvatar />
+                    
+                    <Empty label="No conversation started!" />
                 )}
                     <div className="flex flex-col-reverse gap-y-4">
                         {messages.map((message) => (
@@ -100,7 +105,10 @@ const ConversationPage = () => {
                             message.role === "user" ? "bg-white border border-black/10" : "bg-muted"
                             )}
                             >
-                                {message.content}
+                                {message.role === "user" ? <UserAvatar /> : <BotAvatar />}
+                                <p className="text-sm">
+                                    {message.content}
+                                </p>
                             </div>
                         ))}
                     </div>

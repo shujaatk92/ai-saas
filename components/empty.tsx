@@ -1,7 +1,6 @@
 "use client"
 
 import Image from "next/image"
-import { EmptyObject } from "react-hook-form";
 interface EmptyProps {
     label: string;
 }
