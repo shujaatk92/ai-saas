@@ -10,5 +10,4 @@ OPENAI_API_KEY=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
 
 REPLICATE_API_TOKEN=r8_OD0WeYmORefv1El5XzHxKZQsIWVrawS3yGzkP
 
-
-DATABASE_URL='mysql://0m6kxy6u0uua3ccy4i4i:pscale_pw_M5PkTMyX9bQ3XkwjEMttQMcHVjcbIJB685gR6xVR1bE@aws.connect.psdb.cloud/ai-saas?sslaccept=strict'
+DATABASE_URL='mysql://agrw76lquyv1mf0x3cnf:pscale_pw_RAZ0oGAQdKvwKdLFowZ022iGIS7Ulp9LhUZrlWT2L8m@aws.connect.psdb.cloud/ai-saas?sslaccept=strict'
