@@ -14,28 +14,28 @@ const tools = [
         bgColor: "bg-violet-500/10"
     },
     {
-        label: "Image Generator",
+        label: "Image Generation",
         href: "/image",
         icon: ImageIcon,
         color: "text-pink-700",
         bgColor: "bg-pink-500/10"
     },
     {
-        label: "Video Generator",
+        label: "Video Generation",
         href: "/video",
         icon: VideoIcon,
         color: "text-orange-700",
         bgColor: "bg-orange-500/10"
     },
     {
-        label: "Music Generator",
+        label: "Music Generation",
         href: "/music",
         icon: Music,
         color: "text-emerald-500",
         bgColor: "bg-emerald-500/10"
     },
     {
-        label: "Code Generator",
+        label: "Code Generation",
         href: "/code",
         icon: Code,
         color: "text-green-700",
