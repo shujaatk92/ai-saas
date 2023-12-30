@@ -9,3 +9,6 @@ NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/dashboard
 OPENAI_API_KEY=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
 
 REPLICATE_API_TOKEN=r8_OD0WeYmORefv1El5XzHxKZQsIWVrawS3yGzkP
+
+
+DATABASE_URL='mysql://rvo97r31zs1kdx99yqoh:pscale_pw_SEjHhPDfxN5ggzXgZA6VUhaOCxoDQOYSjz8UFrIlJR9@aws.connect.psdb.cloud/ai-saas?sslaccept=strict'
